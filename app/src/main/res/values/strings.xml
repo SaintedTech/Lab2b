@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Lab2b</string>
+    <string name="enter_a_floating_point_number">Enter a floating-point number</string>
 </resources>
