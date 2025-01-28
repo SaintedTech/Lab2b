@@ -28,23 +28,21 @@ public class MainActivity extends AppCompatActivity {
         try {
             String stringCel = cel.getText().toString();
             String stringFaren = faren.getText().toString();
-            float floatFaren = 0.00f;
-            float floatCel = 0.00f;
+
 
             if(!stringCel.isEmpty() && !stringFaren.isEmpty())
             {
-                cel.setText(String.valueOf((floatFaren-32)*(5/9)));
+                float floatFaren = Float.parseFloat(stringFaren);
+                cel.setText(String.valueOf((floatFaren-32f)*(5f/9f)));
+            }
+            else if(!stringFaren.isEmpty()){
+                float floatFaren = Float.parseFloat(stringFaren);
+                cel.setText(String.valueOf((floatFaren-32f)*(5f/9f)));
+
             }
             else if (!stringCel.isEmpty()) {
-
-                 floatCel =  Float.parseFloat(stringCel);
+              float  floatCel = Float.parseFloat(stringCel);
                 faren.setText(String.valueOf(floatCel*(9/5)+32));
-
-
-            } else if(!stringFaren.isEmpty()){
-                floatFaren = Float.parseFloat(stringFaren);
-                cel.setText(String.valueOf((floatFaren-32)*(5/9)));
-
             }
         } catch (NumberFormatException e) {
             // Handle invalid input if needed
